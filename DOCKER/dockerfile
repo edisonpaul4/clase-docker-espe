@@ -1,0 +1,14 @@
+# Use the official Nginx image from the Docker Hub
+FROM nginx:latest
+
+# Copy custom configuration file from the current directory
+# to the Nginx configuration directory
+
+# Copy static website files to the Nginx web root directory
+COPY holamundo.txt /usr/share/nginx/html
+
+# Expose port 80 to the outside world
+EXPOSE 80
+
+# Start Nginx when the container launches
+CMD ["nginx", "-g", "daemon off;"]
